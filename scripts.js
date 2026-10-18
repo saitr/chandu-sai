@@ -88,8 +88,8 @@ const INVITERS = {
 
 function getInviter() {
   const q = new URLSearchParams(location.search);
-  const raw = (q.get('invited_by') || q.get('invitedby') || q.get('by') || q.get('from') || '').toLowerCase();
-  const key = raw.replace(/[^a-z]/g, '');
+  const raw = q.get('invited_by') || q.get('invitedby') || q.get('by') || q.get('from') || '';
+  const key = raw.toLowerCase().replace(/[^a-z]/g, '');
 
   const aliases = {
     // parents
@@ -114,11 +114,50 @@ function getInviter() {
     shivaprakash: 'shivaprakashreddy',
     mama: 'shivaprakashreddy',
     shivaprakashreddy: 'shivaprakashreddy',
-    prakashreddy:'shivaprakashreddy'
-    
+    prakashreddy: 'shivaprakashreddy',
+
+    // groom / bride short names
+    groom: 'sai',
+    bride: 'chandana'
   };
 
-  return INVITERS[aliases[key] || key] || INVITERS.default;
+  // If it matches a predefined person
+  if (INVITERS[aliases[key] || key]) {
+    return INVITERS[aliases[key] || key];
+  }
+
+  // ---------- DYNAMIC NAME SUPPORT ----------
+  // If someone puts any other name, create a personalized version
+  if (raw.trim()) {
+    // Clean the name nicely (capitalize each word)
+    const niceName = raw
+      .replace(/[_+-]/g, ' ')
+      .trim()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+
+    return {
+  pill: `From ${niceName}`,
+  heroLine: `With love and warm wishes, ${niceName} invites you to the engagement of`,
+  sign: `With love, ${niceName}`,
+  theme: {
+    bg: '#2A1518',
+    bg2: '#5C2E35',
+    glow: '#E8A0A8',
+    p: '#4A2530',
+    ps: '#8A4A5A',
+    a: '#D46A7A',
+    g: '#F0C8A0',
+    paper: '#FFF8F6',
+    ink: '#2A1518',
+    pet: ['#F0C8A0', '#E8A0A8', '#F5D0C8']
+  }
+};
+  }
+
+  // Fallback
+  return INVITERS.default;
 }
 
 const inv = getInviter();
