@@ -117,8 +117,8 @@ function getInviter() {
     prakashreddy: 'shivaprakashreddy',
 
     // groom / bride short names
-    groom: 'sai',
-    bride: 'chandana'
+    sai: 'sai',
+    chandana: 'chandana'
   };
 
   // If it matches a predefined person
