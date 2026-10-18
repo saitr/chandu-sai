@@ -66,7 +66,24 @@ const INVITERS = {
     heroLine: 'Our Sai is getting engaged, and we would love for you to join us',
     sign: 'With warm regards, Ajay Reddy and family',
     theme: { bg:'#1A252F', bg2:'#2E4A5E', glow:'#5BA3D9', p:'#2A4055', ps:'#4A6A82', a:'#3A8BC2', g:'#E8C547', paper:'#F5FAFF', ink:'#15202A', pet:['#E8C547','#5BA3D9','#A8D4F0'] }
+  },
+  shivaprakashreddy: {
+  pill: "From Shiva Prakash Reddy",
+  heroLine: "With love and blessings, I invite you to the engagement of my nephew Sai",
+  sign: "With love, Shiva Prakash Reddy",
+  theme: {
+    bg: '#0F1F1A',
+    bg2: '#1E3A30',
+    glow: '#C9A227',
+    p: '#1A3329',
+    ps: '#3D5C4E',
+    a: '#B8941F',
+    g: '#E8C547',
+    paper: '#F7FBF8',
+    ink: '#12201A',
+    pet: ['#E8C547', '#7A9E8A', '#C9A227']
   }
+}
 };
 
 function getInviter() {
@@ -84,14 +101,21 @@ function getInviter() {
     bridefamily: 'brideparents',
 
     // sisters
-    varshal: 'varsha',
+    varsha: 'varsha',
     varshaa: 'varsha',
     anu: 'anuswetha',
     anu_swetha: 'anuswetha',
 
     // brother-in-law
     ajay: 'ajayreddy',
-    brotherinlaw: 'ajayreddy'
+    brotherinlaw: 'ajayreddy',
+
+    // Mama
+    shivaprakash: 'shivaprakashreddy',
+    mama: 'shivaprakashreddy',
+    shivaprakashreddy: 'shivaprakashreddy',
+    prakashreddy:'shivaprakashreddy'
+    
   };
 
   return INVITERS[aliases[key] || key] || INVITERS.default;
