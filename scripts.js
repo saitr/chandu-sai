@@ -33,14 +33,14 @@ const INVITERS = {
     theme: { bg:'#1A2A1A', bg2:'#3D5C3D', glow:'#E8C547', p:'#2E4A2E', ps:'#5A7A5A', a:'#C4A035', g:'#E8C547', paper:'#F8FFF8', ink:'#1A2A1A', pet:['#E8C547','#A8D5A2','#C4A035'] }
   },
 
-  groom: {
+  sai: {
     pill: 'From Sai',
     heroLine: "I'm getting engaged, and I would love for you to be there",
     sign: 'Warmly, Sai',
     theme: { bg:'#17181C', bg2:'#3A3D46', glow:'#C8793A', p:'#2B2D34', ps:'#5C606C', a:'#B8692E', g:'#E0B56A', paper:'#FAF6EF', ink:'#1C1D22', pet:['#E0B56A','#C8793A','#B9BCC6'] }
   },
 
-  bride: {
+  chandana: {
     pill: 'From Chandana',
     heroLine: "I'm so happy to share that I'm getting engaged",
     sign: 'With love, Chandana',
